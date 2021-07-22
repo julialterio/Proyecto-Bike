@@ -1,0 +1,20 @@
+<div class="fondo">
+    <div class="categorias">       
+      <button type="button"  (click)="filterBy='all'">Todos los Modelos</button>
+      <button type="button"  (click)="filterBy='junior'">Para Nenes</button>
+      <button type="button"  (click)="filterBy='adultos'">Para Adultos</button>
+      <button type="button"  (click)="filterBy='eco'">Economicas</button>
+      <button type="button"  (click)="filterBy='motor'">Con Motor</button>
+    </div>
+
+
+      <ul>
+        <li *ngFor="let img of (allImages | filterimage:filterBy)">
+              <a [routerLink]="['/image', img.id]"> 
+                <img src="{{img.url}}" class="img" width="240" height="170">
+            </a>
+        </li> 
+      </ul>
+</div>
+
+
